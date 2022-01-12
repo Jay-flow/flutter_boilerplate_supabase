@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/generated/l10n.dart';
 import 'package:flutter_boilerplate/screens/home.dart';
+import 'package:flutter_boilerplate/utils/logger.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+// ignore: implementation_imports
+import 'package:flutter_dotenv/src/errors.dart' show FileNotFoundError;
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
-  await dotenv.load(fileName: ".env");
+  try {
+    await dotenv.load(fileName: ".env");
+  } on FileNotFoundError {
+    logger.e("Not found .env file");
+
+    throw FileNotFoundError();
+  }
 
   await Supabase.initialize(
     url: dotenv.get("SUPABASE_API_URL"),
