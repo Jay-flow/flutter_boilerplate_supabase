@@ -4,9 +4,16 @@ import 'package:flutter_boilerplate/screens/home.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
   await dotenv.load(fileName: ".env");
+
+  await Supabase.initialize(
+    url: dotenv.get("SUPABASE_API_URL"),
+    anonKey: dotenv.get("SUPABASE_ANON_KEY"),
+    debug: dotenv.get("ENV") == "development",
+  );
 
   runApp(const MyApp());
 }
