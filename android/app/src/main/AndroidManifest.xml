@@ -1,8 +1,8 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.dooboolab.flutter_boilerplate">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.dooboolab.flutter_boilerplate_supabase">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <application android:label="flutter_boilerplate" android:name="${applicationName}" android:icon="@mipmap/ic_launcher">
+    <application android:label="flutter_boilerplate_supabase" android:name="${applicationName}" android:icon="@mipmap/ic_launcher">
         <activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTop" android:theme="@style/LaunchTheme" android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode" android:hardwareAccelerated="true" android:windowSoftInputMode="adjustResize">
             <!-- Specifies an Android theme to apply to this Activity as soon as
                  the Android process has started. This theme is visible to the user
@@ -15,7 +15,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with YOUR_SCHEME://YOUR_HOST -->
-                <data android:scheme="com.dooboolab.flutter_boilerplate" android:host="login-callback" />
+                <data android:scheme="com.dooboolab.flutter_boilerplate_supabase" android:host="login-callback" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

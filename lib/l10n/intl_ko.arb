@@ -1,5 +1,7 @@
 {
   "@@locale": "ko",
 
-  "appName": "두부랩"
+  "appName": "두부랩",
+  "success": "성공",
+  "error": "에러"
 }

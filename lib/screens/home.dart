@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/controller/count_controller.dart';
-import 'package:flutter_boilerplate/screens/result.dart';
-import 'package:flutter_boilerplate/utils/asset.dart' as asset;
+import 'package:flutter_boilerplate/utils/localization.dart';
+import 'package:flutter_boilerplate/widgets/auth_state.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -12,51 +12,27 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends AuthState<Home> {
   final controller = Get.put(CountController());
+
+  @override
+  void initState() {
+    recoverSupabaseSession();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(Intl.message("appName")),
+        title: Text(t("appName")),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              "You have pushed the button this many times:",
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 10),
-              child: Obx(
-                () => Text(
-                  "${controller.count.value}",
-                  style: Theme.of(context).textTheme.headline4,
-                ),
-              ),
-            ),
-            TextButton(
-              child: const Text("Go to the result page."),
-              onPressed: () {
-                Get.to(
-                  () => const Result(),
-                  arguments: "${controller.count.value}",
-                );
-              },
-            ),
-            const Image(
-              image: asset.Images.logo,
-            ),
-          ],
+        child: SpinKitFadingCircle(
+          color: Theme.of(context).indicatorColor,
+          size: 50.0,
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => controller.increase(),
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

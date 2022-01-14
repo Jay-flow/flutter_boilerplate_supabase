@@ -1,5 +1,7 @@
 {
   "@@locale": "en",
 
-  "appName": "dooboolab"
+  "appName": "dooboolab",
+  "success": "Success",
+  "error": "Error"
 }
