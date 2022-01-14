@@ -15,7 +15,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with YOUR_SCHEME://YOUR_HOST -->
-                <data android:scheme="com.dooboolab.flutter_boilerplate_supabase" android:host="login-callback" />
+                <data android:scheme="com.dooboolab.flutter-boilerplate-supabase" android:host="login-callback" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

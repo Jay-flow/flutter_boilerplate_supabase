@@ -25,7 +25,7 @@ class _LoginState extends AuthState<Login> {
 
     var redrectTo = kIsWeb
         ? null
-        : 'com.dooboolab.flutter_boilerplate_supabase://login-callback/';
+        : 'com.dooboolab.flutter-boilerplate-supabase://login-callback/';
 
     logger.d(redrectTo);
 
