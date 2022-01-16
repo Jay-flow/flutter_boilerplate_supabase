@@ -20,7 +20,6 @@ class _AccountState extends AuthRequiredState<Account> {
   String? _avatarUrl;
   var _loading = false;
 
-  /// Called once a user id is received within `onAuthenticated()`
   Future<void> _getProfile(String userId) async {
     setState(() {
       _loading = true;
@@ -35,7 +34,10 @@ class _AccountState extends AuthRequiredState<Account> {
     final error = response.error;
 
     if (error != null && response.status != 406) {
-      Get.snackbar(t('error'), error.message);
+      Get.snackbar(
+        t('error'),
+        error.message,
+      );
     }
 
     final data = response.data;
@@ -51,7 +53,6 @@ class _AccountState extends AuthRequiredState<Account> {
     });
   }
 
-  /// Called when user taps `Update` button
   Future<void> _updateProfile() async {
     setState(() {
       _loading = true;
@@ -72,7 +73,10 @@ class _AccountState extends AuthRequiredState<Account> {
     if (error != null) {
       Get.snackbar(t('error'), error.message);
     } else {
-      Get.snackbar(t('success'), 'Successfully updated profile!');
+      Get.snackbar(
+        t('success'),
+        t('profileUpdateSuccessful'),
+      );
     }
 
     setState(() {
@@ -89,7 +93,6 @@ class _AccountState extends AuthRequiredState<Account> {
     }
   }
 
-  /// Called when image has been uploaded to Supabase storage from within Avatar widget
   Future<void> _onUpload(String imageUrl) async {
     final response = await supabase.from('profiles').upsert({
       'id': _userId,
@@ -105,7 +108,10 @@ class _AccountState extends AuthRequiredState<Account> {
       _avatarUrl = imageUrl;
     });
 
-    Get.snackbar(t('success'), 'Updated your profile image!');
+    Get.snackbar(
+      t('success'),
+      t('updatedProfileImage'),
+    );
   }
 
   @override
@@ -128,7 +134,11 @@ class _AccountState extends AuthRequiredState<Account> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Profile')),
+      appBar: AppBar(
+        title: Text(
+          t('profile'),
+        ),
+      ),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 12),
         children: [
@@ -139,19 +149,31 @@ class _AccountState extends AuthRequiredState<Account> {
           const SizedBox(height: 18),
           TextFormField(
             controller: _usernameController,
-            decoration: const InputDecoration(labelText: 'User Name'),
+            decoration: InputDecoration(
+              labelText: t('userName'),
+            ),
           ),
           const SizedBox(height: 18),
           TextFormField(
             controller: _websiteController,
-            decoration: const InputDecoration(labelText: 'Website'),
+            decoration: InputDecoration(
+              labelText: t('website'),
+            ),
           ),
           const SizedBox(height: 18),
           ElevatedButton(
-              onPressed: _updateProfile,
-              child: Text(_loading ? 'Saving...' : 'Update')),
+            onPressed: _updateProfile,
+            child: Text(
+              _loading ? t('saving') : t('update'),
+            ),
+          ),
           const SizedBox(height: 18),
-          TextButton(onPressed: _signOut, child: const Text('Sign Out')),
+          TextButton(
+            onPressed: _signOut,
+            child: Text(
+              t('signOut'),
+            ),
+          ),
         ],
       ),
     );

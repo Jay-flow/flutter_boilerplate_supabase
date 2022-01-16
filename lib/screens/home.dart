@@ -25,7 +25,9 @@ class _HomeState extends AuthState<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(t("appName")),
+        title: Text(
+          t("appName"),
+        ),
       ),
       body: Center(
         child: SpinKitFadingCircle(

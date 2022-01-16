@@ -79,6 +79,146 @@ class S {
       args: [],
     );
   }
+
+  /// `Update`
+  String get update {
+    return Intl.message(
+      'Update',
+      name: 'update',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In`
+  String get signIn {
+    return Intl.message(
+      'Sign In',
+      name: 'signIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign out`
+  String get signOut {
+    return Intl.message(
+      'Sign out',
+      name: 'signOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Saving...`
+  String get saving {
+    return Intl.message(
+      'Saving...',
+      name: 'saving',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading...`
+  String get loading {
+    return Intl.message(
+      'Loading...',
+      name: 'loading',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Website`
+  String get website {
+    return Intl.message(
+      'Website',
+      name: 'website',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User name`
+  String get userName {
+    return Intl.message(
+      'User name',
+      name: 'userName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message(
+      'Profile',
+      name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Updated your profile image!`
+  String get updatedProfileImage {
+    return Intl.message(
+      'Updated your profile image!',
+      name: 'updatedProfileImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Successfully updated profile!`
+  String get profileUpdateSuccessful {
+    return Intl.message(
+      'Successfully updated profile!',
+      name: 'profileUpdateSuccessful',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check your email for login link!`
+  String get checkYourEmail {
+    return Intl.message(
+      'Check your email for login link!',
+      name: 'checkYourEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send Magic Link`
+  String get sendMagicLink {
+    return Intl.message(
+      'Send Magic Link',
+      name: 'sendMagicLink',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in via the magic link with your email below`
+  String get emailSignIn {
+    return Intl.message(
+      'Sign in via the magic link with your email below',
+      name: 'emailSignIn',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

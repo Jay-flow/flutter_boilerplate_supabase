@@ -23,7 +23,25 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appName": MessageLookupByLibrary.simpleMessage("두부랩"),
+        "checkYourEmail":
+            MessageLookupByLibrary.simpleMessage("로그인 링크를 당신의 이메일에서 확인해보세요!"),
+        "email": MessageLookupByLibrary.simpleMessage("이메일"),
+        "emailSignIn": MessageLookupByLibrary.simpleMessage(
+            "아래 이메일로 Magic Link를 통해 로그인 하세요."),
         "error": MessageLookupByLibrary.simpleMessage("에러"),
-        "success": MessageLookupByLibrary.simpleMessage("성공")
+        "loading": MessageLookupByLibrary.simpleMessage("로딩중..."),
+        "profile": MessageLookupByLibrary.simpleMessage("프로필"),
+        "profileUpdateSuccessful":
+            MessageLookupByLibrary.simpleMessage("프로필이 업데이트 성공!"),
+        "saving": MessageLookupByLibrary.simpleMessage("저장중..."),
+        "sendMagicLink": MessageLookupByLibrary.simpleMessage("Magic Link 보내기"),
+        "signIn": MessageLookupByLibrary.simpleMessage("로그인"),
+        "signOut": MessageLookupByLibrary.simpleMessage("로그아웃"),
+        "success": MessageLookupByLibrary.simpleMessage("성공"),
+        "update": MessageLookupByLibrary.simpleMessage("업데이트"),
+        "updatedProfileImage":
+            MessageLookupByLibrary.simpleMessage("프로필 이미지가 업데이트 되었습니다!"),
+        "userName": MessageLookupByLibrary.simpleMessage("유저 이름"),
+        "website": MessageLookupByLibrary.simpleMessage("웹사이트")
       };
 }

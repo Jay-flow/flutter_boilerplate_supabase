@@ -23,7 +23,26 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appName": MessageLookupByLibrary.simpleMessage("dooboolab"),
+        "checkYourEmail": MessageLookupByLibrary.simpleMessage(
+            "Check your email for login link!"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "emailSignIn": MessageLookupByLibrary.simpleMessage(
+            "Sign in via the magic link with your email below"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
-        "success": MessageLookupByLibrary.simpleMessage("Success")
+        "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "profileUpdateSuccessful": MessageLookupByLibrary.simpleMessage(
+            "Successfully updated profile!"),
+        "saving": MessageLookupByLibrary.simpleMessage("Saving..."),
+        "sendMagicLink":
+            MessageLookupByLibrary.simpleMessage("Send Magic Link"),
+        "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
+        "signOut": MessageLookupByLibrary.simpleMessage("Sign out"),
+        "success": MessageLookupByLibrary.simpleMessage("Success"),
+        "update": MessageLookupByLibrary.simpleMessage("Update"),
+        "updatedProfileImage":
+            MessageLookupByLibrary.simpleMessage("Updated your profile image!"),
+        "userName": MessageLookupByLibrary.simpleMessage("User name"),
+        "website": MessageLookupByLibrary.simpleMessage("Website")
       };
 }

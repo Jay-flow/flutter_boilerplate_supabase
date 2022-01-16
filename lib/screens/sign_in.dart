@@ -2,19 +2,19 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/utils/constants.dart';
 import 'package:flutter_boilerplate/utils/localization.dart';
-import 'package:flutter_boilerplate/utils/logger.dart';
 import 'package:flutter_boilerplate/widgets/auth_state.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:supabase/supabase.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+class SignIn extends StatefulWidget {
+  const SignIn({Key? key}) : super(key: key);
 
   @override
-  _LoginState createState() => _LoginState();
+  _SignInState createState() => _SignInState();
 }
 
-class _LoginState extends AuthState<Login> {
+class _SignInState extends AuthState<SignIn> {
   bool _isLoading = false;
   late final TextEditingController _emailController;
 
@@ -23,11 +23,7 @@ class _LoginState extends AuthState<Login> {
       _isLoading = true;
     });
 
-    var redrectTo = kIsWeb
-        ? null
-        : 'com.dooboolab.flutter-boilerplate-supabase://login-callback/';
-
-    logger.d(redrectTo);
+    var redrectTo = kIsWeb ? null : dotenv.get("DEEP_LINK");
 
     final response = await supabase.auth.signIn(
         email: _emailController.text,
@@ -40,7 +36,10 @@ class _LoginState extends AuthState<Login> {
     if (error != null) {
       Get.snackbar(t('error'), error.message);
     } else {
-      Get.snackbar(t('success'), 'Check your email for login link!');
+      Get.snackbar(
+        t('success'),
+        t('checkYourEmail'),
+      );
       _emailController.clear();
     }
 
@@ -64,20 +63,30 @@ class _LoginState extends AuthState<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Sign In')),
+      appBar: AppBar(
+        title: Text(
+          t('signIn'),
+        ),
+      ),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 12),
         children: [
-          const Text('Sign in via the magic link with your email below'),
+          Text(
+            t('emailSignIn'),
+          ),
           const SizedBox(height: 18),
           TextFormField(
             controller: _emailController,
-            decoration: const InputDecoration(labelText: 'Email'),
+            decoration: InputDecoration(
+              labelText: t('email'),
+            ),
           ),
           const SizedBox(height: 18),
           ElevatedButton(
             onPressed: _isLoading ? null : _signIn,
-            child: Text(_isLoading ? 'Loading' : 'Send Magic Link'),
+            child: Text(
+              _isLoading ? t('loading') : t('sendMagicLink'),
+            ),
           ),
         ],
       ),

@@ -1,7 +1,20 @@
 {
   "@@locale": "en",
-
   "appName": "dooboolab",
   "success": "Success",
-  "error": "Error"
+  "error": "Error",
+  "update": "Update",
+  "signIn": "Sign In",
+  "signOut": "Sign out",
+  "saving": "Saving...",
+  "loading": "Loading...",
+  "website": "Website",
+  "email": "Email",
+  "userName": "User name",
+  "profile": "Profile",
+  "updatedProfileImage": "Updated your profile image!",
+  "profileUpdateSuccessful": "Successfully updated profile!",
+  "checkYourEmail": "Check your email for login link!",
+  "sendMagicLink": "Send Magic Link",
+  "emailSignIn": "Sign in via the magic link with your email below"
 }
