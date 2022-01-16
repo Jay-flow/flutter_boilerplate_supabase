@@ -6,15 +6,64 @@ Boilerplate codes including Superbase settings for Flutter.
 
 ## Getting Started
 
-> You have to create the .env file.
+### 1. Install dependencies
+
+```bash
+flutter pub get
+```
+
+### 2. Create an .env file
+
+> You have to create an .env file.
 >
-> Rename the .env_example file to .env.
+> Copy an .env_example file and create an .env file.
 
 ```bash
 cp .env_example .env
-flutter pub get
+```
+
+### 3. Create a Supabase project
+
+Create a Supabase project according to below guide.
+
+- [Project set up](https://supabase.com/docs/guides/with-flutter#project-set-up)
+- [Set up the database schema](https://supabase.com/docs/guides/with-flutter#set-up-the-database-schema)
+
+> ⚠️ Caveat
+>
+> Storage's bucket must be set to public.
+
+### 4. Modify configurations and the `.env` file
+
+According to the guide below.
+Check values to enter in `.env`'.
+
+- [Get the API & ANON Keys](https://supabase.com/docs/guides/with-flutter#get-the-api-keys)
+
+- [Setup deep links](https://supabase.com/docs/guides/with-flutter#setup-deep-links)
+
+- Modify the `.env` file in the project root
+
+As a result, an .env file similar to the following must be in the project route.
+
+```bash
+ENV="development"
+SUPABASE_API_URL="https://kaskjhasdfqwerkjhv.supabase.co"
+SUPABASE_ANON_KEY="asasdfjhASDfjkasdjkf8asdfsadf8.asdfkjhasjkdfsdafsdFASDFasdfasdflasdAFSDF9.kjahsdf123124kjhasdf66kjhasdkfjhasASDsdkj"
+DEEP_LINK="com.dooboolab.flutter-boilerplate-supabase://login-callback/"
+```
+
+> ⚠️ Caveat
+>
+> Underbar('_') must not be used for the deep link.
+
+### 5. Run the project
+
+```bash
 flutter run
 ```
+
+---
 
 ## Specification
 
@@ -22,10 +71,29 @@ flutter run
 - Localization
 - [Get package](https://pub.dev/packages/get) navigation settings
 - Asset-related settings (Image, Icon, Color)
-- Installed test packages
-- Installed test packages
-- Installed the flutter_env package
-- Installed the logger package
+- Testing settings
+
+### Dependencies
+
+```yaml
+# dependencies
+cupertino_icons: ^1.0.2
+intl: ^0.17.0
+get: ^4.6.1
+supabase_flutter: ^0.2.10
+flutter_dotenv: ^5.0.2
+logger: ^1.1.0
+http: ^0.13.4
+image_picker: ^0.8.4+4
+flutter_spinkit: ^5.1.0
+
+# dev_dependencies
+test: ^1.17.12
+mockito: ^5.0.17
+build_runner: ^2.1.7
+integration_test: ^0.8.1
+flutter_native_splash: ^1.3.3
+```
 
 ## Folder Structures
 
@@ -34,6 +102,8 @@ flutter run
 ├── build
 ├── ios
 ├── lib
+│   ├── apis
+│   ├── controller
 │   ├── generated
 │   │   ├── intl
 │   │   │   ├── messages_all.dart
@@ -65,26 +135,8 @@ flutter run
 ├── flutter_boilerplate.iml
 ├── pubspec.lock
 ├── pubspec.yaml
-├──.env // <- Rename the .env_example file to .env.
+├──.env_example
 └── README.md
-```
-
-## Dependencies
-
-```yaml
-# dev_dependencies
-test: ^1.17.12
-mockito: ^5.0.17
-build_runner: ^2.1.7
-integration_test: ^0.8.1
-
-# dependencies
-cupertino_icons: ^1.0.2
-intl: ^0.17.0
-supabase_flutter: ^0.2.9
-get: ^4.6.1
-flutter_dotenv: ^5.0.2
-logger: ^1.1.0
 ```
 
 ## Localization
@@ -187,3 +239,11 @@ logger.e('Error! Something bad happened');
 ```
 
 ![logger](https://raw.githubusercontent.com/leisim/logger/master/art/screenshot.png)
+
+## Native splash screen
+
+This project has a flutter_native_splash package installed.
+This makes it possible to show the native splash screen.
+Please refer to [this link](https://pub.dev/packages/flutter_native_splash#usage) for instructions on how to use it.
+
+![native_splash_image](https://raw.githubusercontent.com/jonbhanson/flutter_native_splash/master/splash_demo.gif)
