@@ -20,10 +20,10 @@ flutter pub get
 
 > You have to create an .env file.
 >
-> Copy an .env_example file and create an .env file.
+> Copy an .env_sample file and create an .env file.
 
 ```bash
-cp .env_example .env
+cp .env_sample .env
 ```
 
 ### 3. Create a Supabase project
@@ -59,7 +59,7 @@ DEEP_LINK="com.dooboolab.flutter-boilerplate-supabase://login-callback/"
 
 > ⚠️ Caveat
 >
-> Underbar('_') must not be used for the deep link.
+> Underbar('\_') must not be used for the deep link.
 
 ### 5. Run the project
 
@@ -139,7 +139,7 @@ flutter_native_splash: ^1.3.3
 ├── flutter_boilerplate.iml
 ├── pubspec.lock
 ├── pubspec.yaml
-├──.env_example
+├──.env_sample
 └── README.md
 ```
 
