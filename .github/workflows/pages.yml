@@ -1,0 +1,31 @@
+name: Github Pages
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+jobs:
+  build_and_deploy_web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "beta"
+
+      - name: COPY ENV
+        run: cp .env.sample .env
+
+      - name: Pub get
+        run: flutter pub get
+
+      - name: Enable web
+        run: flutter config --enable-web
+
+      - name: Build web
+        run: flutter build web --release
+
+      - uses: erickzanardo/flutter-gh-pages@v7
+        with:
+          targetBranch: gh-pages
+          baseHref: /flutter_boilerplate_supabase/

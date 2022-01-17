@@ -1,6 +1,10 @@
 # flutter_boilerplate_supabase
 
-Boilerplate codes including Superbase settings for Flutter.
+[![CI](https://github.com/flutter-seoul/flutter_boilerplate_supabase/actions/workflows/ci.yml/badge.svg)](https://github.com/flutter-seoul/flutter_boilerplate_supabase/actions/workflows/ci.yml)
+[![Github Pages](https://github.com/flutter-seoul/flutter_boilerplate_supabase/actions/workflows/pages.yml/badge.svg)](https://github.com/flutter-seoul_supabase/flutter_boilerplate/actions/workflows/pages.yml)
+[![codecov](https://codecov.io/gh/flutter-seoul/flutter_boilerplate_supabase/branch/main/graph/badge.svg?token=MR48LEE9RW)](https://codecov.io/gh/flutter-seoul/flutter_boilerplate_supabase)
+
+Boilerplate codes including Supabase settings for Flutter.
 
 ![Flutter](https://res.cloudinary.com/practicaldev/image/fetch/s--Y97NN_wk--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ilxgukpk5uq6shritm1h.png)
 
