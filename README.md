@@ -20,10 +20,10 @@ flutter pub get
 
 > You have to create an .env file.
 >
-> Copy an .env_sample file and create an .env file.
+> Copy an .env.sample file and create an .env file.
 
 ```bash
-cp .env_sample .env
+cp .env.sample .env
 ```
 
 ### 3. Create a Supabase project
@@ -139,7 +139,7 @@ flutter_native_splash: ^1.3.3
 ├── flutter_boilerplate.iml
 ├── pubspec.lock
 ├── pubspec.yaml
-├──.env_sample
+├──.env.sample
 └── README.md
 ```
 
